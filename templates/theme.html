@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MKG Hospital. 
+  Your Health - Our Priority</title>
+  <link href="../static/style.css" rel="stylesheet"/>
+</head>
+<body>
+     <h1 align="center">MKG HOSPITAL<br> & RESEARCH CENTRE,PUNE.</h1>
+  <header>
+     
+     <div class="page-banner overlay-dark bg-image" style="background-image: url(../static/bg_img1.jpg);">
+      
+    <div class="container text-center wow fadeInUp">
+    
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+      <div class="container">
+        
+        <div class="collapse navbar-collapse" id="navbarSupport">
+        <br>
+        <br>
+        <br>
+          <ul class="navbar-nav ml-auto">
+          
+            <li class="nav-item">
+              <a class=" btn btn-primary" href="{{url_for('home')}}">Home</a><br><br>
+            </li>           
+            <li class="nav-item active">
+             <a class=" btn btn-primary" href="{{url_for('about')}}"> About Us</a><br><br>
+            </li>
+            <li class="nav-item active">
+             <a class=" btn btn-primary" href="{{url_for('awareness')}}"> Awareness</a><br></br>
+            </li>
+        
+            {% if 'uname' not in session %}
+            <li class="nav-item">
+              <a class="btn btn-primary ml-lg-4" href="{{url_for('login')}}">Login</a>
+            </li>
+            {% else %}
+            <li class="nav-item active">
+             <a class=" btn btn-primary" href="{{url_for('allpatient')}}"> Manage Patient Information</a><br></br>
+            </li>
+             <li class="nav-item active">
+             <a class=" btn btn-primary" href="{{url_for('logout')}}">Logout</a>
+            </li>
+
+            {% endif %}
+        
+          </ul>
+          
+        </div> <!-- .navbar-collapse -->
+      </div> <!-- .container -->
+    </nav>
+    <br>
+  </header>
+    
+    {% block content %}
+     
+    
+     {% endblock %}
+  
+    
+   <footer class="page-footer">
+    <div class="container">
+      <div class="row px-md-3">
+        <div class="col-sm-6 col-lg-3 py-3">
+          <h5>Company</h5>
+          <ul class="footer-menu">
+            <li><a href="{{url_for('about')}}">About Us</a></li>
+          </ul>
+        </div>
+       
+        <div class="col-sm-6 col-lg-3 py-3">
+          <h5>Contact</h5>
+          <ul>
+              <li>351. FC Road,Pune</li><br>
+              <li>020-243-38086</li><br>
+              <li>mkghospital@mail.com</li>
+          </ul>
+        </div>
+      <hr>
+
+      <p id="copyright">Copyright &copy; 2021. All right reserved</p>
+    </div>
+  </footer> 
+</body>
+</html>

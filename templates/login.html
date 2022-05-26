@@ -1,0 +1,13 @@
+{% extends "theme.html" %}
+{% block content %}
+
+     <h2>Login Here</h2>
+     <form action="{{url_for('check')}}" method="POST">
+         <label>USERNAME</label>
+         <input type="text" name="uname"/><br><br>
+         <label>PASSWORD</label>
+         <input type="password" name="pwd"/><br><br>
+         <input type="submit" name="login" value="Login"/>
+    </form>
+    
+{% endblock %}

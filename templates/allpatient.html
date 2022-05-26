@@ -1,0 +1,53 @@
+{% extends "theme.html" %}
+{% block content %}
+          
+          
+
+         <br>
+         
+           <form action="{{url_for('addpatient')}}" method='POST' >
+              <label>Patient Name</label>
+              <input type="text" name="pname"/><br><br>
+              <label>Age</label>
+              <input type="text" name="age"/><br><br>
+              <label>Contact No.</label>
+              <input type="text" name="contact"/><br><br>
+              <label>Diagnosis</label>
+              <input type="text" name="dis"/><br><br>
+              <label>Doctor</label>
+              <select name="dr">          
+                 <option value="">--Please select--</option>
+                 <option value="Dr.Captain America">Dr.Captain America</option>
+                 <option value="Dr.Tony Stark">Dr.Tony Stark</option>
+                 <option value="Dr.Mark Deadpool">Dr.Mark DeadPool</option>
+              </select><br><br>
+              <input type="submit" name="addpatient" value="ADD NEW PATIENT" class=" btn"/>
+           </form>
+       
+         <br><br>
+           <h3><u>Following is the list of Patients Hospitalized :</u></h3>
+           <table border='2' width='900'>
+            <tr>
+              <th>Patient Name</th>
+              <th>Age</th>
+              <th>Contact No.</th>
+              <th>Diagnosis</th>
+              <th>Doctor Name</th>
+              <th>Status</th>
+              <th colspan="2">Action</th>
+            </tr>
+              {% for row in data %}
+            <tr align="center">
+               <td>{{row[1]}}</td>
+               <td>{{row[2]}}</td>
+               <td>{{row[3]}}</td>
+               <td>{{row[4]}}</td>
+               <td>{{row[5]}}</td>
+               <td>{{row[6]}}</td>
+               <td><a href="{{url_for('edit',id=row[0])}}">edit</a></td>
+               <td><a href="{{url_for('delete',id=row[0])}}">delete</a></td>
+            </tr>
+              {% endfor %}
+           </table><br><br>
+       
+{% endblock %}

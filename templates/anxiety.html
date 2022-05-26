@@ -1,0 +1,36 @@
+{% extends "theme.html" %}
+{% block content %}
+
+      
+      <h1 align="center">Anxiety</h1>
+      <style>
+           .img-container{
+             text-align:center;
+           }
+      </style>
+      <div class="img-container">
+      <img src="../static/anx_1.jpg" height="300px" width="900px" />
+      </div>
+      
+      <p action="{{url_for('anxiety')}}">
+      </p>
+      <h3>About</h3>
+      <p>{{ anxiety_data[0] }}</p>
+      <h3>Cause</h3>
+      <p>{{ anxiety_data[1] }}</p>
+      <h3>Symptoms</h3>
+      
+      <div class="img-container">
+      <img src="../static/anx_sym.jpg" height="300px" width="500px" />
+      </div>
+      <p>{{ anxiety_data[2] }}</p>
+      <h3>Diagnosis</h3>
+      <p>{{ anxiety_data[3] }}</p>
+      <h3>Treatment</h3>
+      <p>{{ anxiety_data[4] }}</p>
+      
+      
+      
+      
+
+{% endblock %}

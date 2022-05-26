@@ -1,0 +1,19 @@
+{% extends "theme.html" %}
+{% block content %}
+
+        <form action="{{url_for('update')}}" method="POST">
+             <input type="hidden" name="uid" value="{{singlepatient[0]}}">
+             <label>Patient Name</label>
+             <input type="text" name="pname" value="{{singlepatient[1]}}"/><br><br>
+             <label>Age</label>
+             <input type="text" name="age" value="{{singlepatient[2]}}"/><br><br>
+             <label>CONTACT</label>
+             <input type="text" name="contact" value="{{singlepatient[3]}}"/><br><br>
+             <label>Diagnosis</label>
+             <input type="text" name="dis" value="{{singlepatient[4]}}"/><br><br>
+             <label>Doctor</label>
+             <input type="text" name="dr" value="{{singlepatient[5]}}"/><br><br>
+             <input type="submit" name="updateuser" value="UPDATE"/>   
+         </form>
+     
+{% endblock %}
